@@ -35,29 +35,7 @@ class LogsTestControllerTest {
     }
 
     @Test
-    void testNormalLogs_ShouldReturn200Status() throws Exception {
-        // When & Then
-        mockMvc.perform(get("/v1/logs-test"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
     void testErrorLogs_ShouldReturnSuccessMessage() throws Exception {
-        // When & Then
-        mockMvc.perform(post("/v1/logs-test"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Error logs test endpoint is working!"));
-    }
-
-    @Test
-    void testErrorLogs_ShouldReturn200Status() throws Exception {
-        // When & Then
-        mockMvc.perform(post("/v1/logs-test"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void testErrorLogs_ShouldHandleExceptionGracefully() throws Exception {
         // When & Then
         mockMvc.perform(post("/v1/logs-test"))
                 .andExpect(status().isOk())
