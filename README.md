@@ -9,6 +9,7 @@ Repository created to store our final project in the subject of Back-end
 ## 👥 Integrantes
 - Lucas De Bitencourt Frasson
 - Vitor Muneretto Tinelli
+- Filipe De Lima Marques
 
 ---
 
