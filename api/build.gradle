@@ -5,12 +5,17 @@ plugins {
 dependencies {
     implementation project(':domain')
 
+    //Spring Boot Dependencies
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
     // Logging with Logstash
     implementation 'net.logstash.logback:logstash-logback-encoder:7.4'
+
+    // OpenAPI Documentation
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13")
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 // API module é o módulo executável

@@ -1,14 +1,16 @@
 package cutepush.beanorganized.api.controller.logs;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Log4j2
 @RestController
 @RequestMapping("/v1/logs-test")
-@Log4j2
+@Tag(name = "Logs Test Controller", description = "Controller for testing logging functionality")
 public class LogsTestController {
 
     @GetMapping
