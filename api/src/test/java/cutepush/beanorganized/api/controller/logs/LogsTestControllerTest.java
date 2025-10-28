@@ -30,7 +30,7 @@ class LogsTestControllerTest {
     void testNormalLogs_ShouldReturnSuccessMessage() throws Exception {
         // When & Then
         mockMvc.perform(get("/v1/logs-test"))
-                .andExpect(status().isOk())
+                .andExpect(status().is1xxInformational())
                 .andExpect(content().string("Logs test endpoint is working!"));
     }
 
