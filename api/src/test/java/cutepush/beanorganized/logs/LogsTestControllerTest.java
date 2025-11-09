@@ -4,10 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import static org.mockito.Mockito.doNothing;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -19,6 +21,9 @@ class LogsTestControllerTest {
     @InjectMocks
     private LogsTestController logsTestController;
 
+    @Mock
+    private LogsService logsService;
+
     private MockMvc mockMvc;
 
     @BeforeEach
@@ -28,17 +33,15 @@ class LogsTestControllerTest {
 
     @Test
     void testNormalLogs_ShouldReturnSuccessMessage() throws Exception {
-        // When & Then
-        mockMvc.perform(get("/v1/logs-test"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Logs test endpoint is working!"));
+        doNothing().when(logsService).logLevel();
+
+        mockMvc.perform(get("/v1/logs-test")).andExpect(status().isOk()).andExpect(content().string("Logs test endpoint is working!"));
     }
 
     @Test
     void testErrorLogs_ShouldReturnSuccessMessage() throws Exception {
-        // When & Then
-        mockMvc.perform(post("/v1/logs-test"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Error logs test endpoint is working!"));
+        doNothing().when(logsService).logException();
+
+        mockMvc.perform(post("/v1/logs-test")).andExpect(status().isOk()).andExpect(content().string("Error logs test endpoint is working!"));
     }
 }
