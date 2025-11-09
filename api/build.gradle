@@ -18,7 +18,6 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
-// API module é o módulo executável
 bootJar {
     enabled = true
 }

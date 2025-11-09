@@ -1,4 +1,4 @@
-package cutepush.beanorganized.api.controller.logs;
+package cutepush.beanorganized.logs;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
