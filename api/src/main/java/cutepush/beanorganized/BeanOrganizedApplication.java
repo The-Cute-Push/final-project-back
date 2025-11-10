@@ -1,12 +1,9 @@
-package cutepush.beanorganized.api;
+package cutepush.beanorganized;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {
-    "cutepush.beanorganized.api",
-    "cutepush.beanorganized.domain"
-})
+@SpringBootApplication
 public class BeanOrganizedApplication {
 
     public static void main(String[] args) {
